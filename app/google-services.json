@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268402428670",
+    "project_id": "moocows-food-app",
+    "storage_bucket": "moocows-food-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268402428670:android:946c705f5d121a14f033af",
+        "android_client_info": {
+          "package_name": "com.example.moocows_food_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSwjJOV1zpsXc7TZaNfVqEwcIsYddBfHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
