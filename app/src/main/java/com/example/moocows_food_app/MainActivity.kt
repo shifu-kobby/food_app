@@ -95,9 +95,75 @@ fun MainScreen(
             ) {
                 NameAndProfile()
                 Search()
+                Banner()
             }
         }
     )
+}
+
+@Composable
+fun Banner() {
+    ConstraintLayout(
+        modifier = Modifier
+            .padding(horizontal = 16.dp, vertical = 16.dp)
+            .fillMaxWidth()
+            .height(150.dp)
+            .background(
+                color = Color(0xffffc5ab),
+                shape = RoundedCornerShape(10.dp)
+            )
+    ) {
+        val ( image, title, date, buttonLayout ) = createRefs()
+        Image(
+            painter = painterResource(id=R.drawable.image_banner),
+            contentDescription = null,
+            modifier = Modifier
+                .constrainAs(image) {
+                    start.linkTo(parent.start)
+                    bottom.linkTo(parent.bottom)
+                }
+                .width(220.dp)
+        )
+        Text(
+            text = "Free Delivery",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            modifier = Modifier
+                .constrainAs(title) {
+                    start.linkTo(image.end)
+                    top.linkTo(image.top)
+                }
+        )
+        Text(
+            text = "May 2 - June 10",
+            fontSize = 18.sp,
+            color = Color.Black,
+            modifier = Modifier
+                .constrainAs(date) {
+                    start.linkTo(title.start)
+                    top.linkTo(title.bottom)
+                    end.linkTo(title.end)
+                }
+        )
+        Text(
+            text = "Order Now",
+            color = Color.White,
+            modifier = Modifier
+                .padding(vertical = 8.dp)
+                .constrainAs(buttonLayout) {
+                    start.linkTo(image.end)
+                    top.linkTo(date.bottom, margin = 8.dp)
+                    end.linkTo(date.end)
+                    bottom.linkTo(parent.bottom)
+                }
+                .background(
+                    color = Color(0xffff5e00),
+                    shape = RoundedCornerShape(50.dp)
+                )
+                .padding(8.dp)
+        )
+    }
 }
 
 @Composable
