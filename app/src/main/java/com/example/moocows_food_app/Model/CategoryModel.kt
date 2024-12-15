@@ -1,4 +1,4 @@
-package com.example.moocows_food_app.Category
+package com.example.moocows_food_app.Model
 
 data class CategoryModel(
     val title: String = "",

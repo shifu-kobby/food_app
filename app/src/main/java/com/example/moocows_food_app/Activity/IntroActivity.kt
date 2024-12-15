@@ -1,8 +1,6 @@
-package com.example.moocows_food_app
+package com.example.moocows_food_app.Activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -26,8 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.moocows_food_app.R
 
 class IntroActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +51,7 @@ fun IntroScreen(onGetStartedClick: () -> Unit) {
         ) {
             val ( backgroundImg, logoImg, titleTxt, subtitleTxt, buttonBox ) = createRefs()
             Image(
-                painter = painterResource(id=R.drawable.background_intro),
+                painter = painterResource(id= R.drawable.background_intro),
                 contentDescription = null,
                 modifier = Modifier
                     .constrainAs(backgroundImg) {
